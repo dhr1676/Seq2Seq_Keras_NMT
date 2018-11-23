@@ -269,7 +269,7 @@ def predict_sent(input_text):
         sampled_word = idx2targword[sampled_token_idx]
         target_text += sampled_word + " "
 
-        if sampled_word == '\n' or len(target_text) >= max_target_seqlen:
+        if sampled_word == '<EOS>' or len(target_text) >= max_target_seqlen:
             stop_condition = True
 
         if sampled_word in ger_embedding:
